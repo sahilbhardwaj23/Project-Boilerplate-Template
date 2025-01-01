@@ -7,10 +7,10 @@ This repository serves as a boilerplate template for setting up a Python project
 1. **Create `projectstructure.py` file and paste the code from my file**:
     ```python
     import os
-from pathlib import Path
+    from pathlib import Path
 
 
-list_of_files=[
+    list_of_files=[
 
     ".github/workflows/.gitkeep",
     "src/__init__.py",
@@ -37,17 +37,17 @@ list_of_files=[
     "tox.ini",
     "experiment/experiments.ipynb"
 
-]
+    ]
 
-for filepath in list_of_files:
-    filepath = Path(filepath)
-    filedir, filename = os.path.split(filepath)
-    if filedir != "":
-        os.makedirs(filedir, exist_ok=True)
+    for filepath in list_of_files:
+        filepath = Path(filepath)
+        filedir, filename = os.path.split(filepath)
+        if filedir != "":
+            os.makedirs(filedir, exist_ok=True)
 
-    if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
-        with open(filepath, "w") as f:
-            pass # create an empty file
+        if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
+            with open(filepath, "w") as f:
+                pass # create an empty file
     ```
 
 2. **Run `python projectstructure.py`**:
